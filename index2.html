@@ -25,7 +25,7 @@
    <script type="text/javascript">
     $(document).ready(function() {
         $('#team_nameLoading').hide();
-        $('#team_name').keyup(function(){
+        $('#team_name').focusout(function(){
           $('#team_nameLoading').show();
           $.post("register2.php", {
             team_name: $('#team_name').val()
@@ -61,7 +61,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Team Nmae is required">
-						<input class="input100" type="text" name="team_name" id="team_name" placeholder="Team name" onBlur="checkAvailability()"><span id="user-availability-status"></span>
+						<input class="input100" type="text" name="team_name" id="team_name" placeholder="Team name" onfocusout="checkAvailability()"><span id="user-availability-status"></span>
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
